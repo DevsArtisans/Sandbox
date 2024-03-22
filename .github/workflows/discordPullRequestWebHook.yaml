@@ -11,6 +11,8 @@ jobs:
       - name: Send Discord Message
         uses: Ilshidur/action-discord@master
         with:
-          args: "New Pull Request from: ${GITHUB_ACTOR} Approve now at: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/pull/${{ github.event.pull_request.number }}"
+          args: >
+            New Pull Request from: ${{ github.actor }}
+            Approve now at: ${{ github.server_url }}/${{ github.repository }}/pull/${{ github.event.pull_request.number }}
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
