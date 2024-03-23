@@ -3,6 +3,10 @@ name: Send Discord Pull Request Approval Notification
 on:
   pull_request:
     types: [opened, reopened]
+  pull_request_review:
+    types: [submitted,edited, dismissed]
+  pull_request_review_comment:
+    types: [created, deleted, edited]
 
 jobs:
   send-discord-message:
